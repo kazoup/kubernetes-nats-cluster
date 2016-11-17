@@ -22,7 +22,6 @@ if [ "$TLS" != false ] ; then
 fi
 
 sudo -E -u nats /gnatsd -m 8222 $EXTRA \
-    --user $USER --pass $PASS \
     $TLSCMD \
     --cluster nats://0.0.0.0:6222 \
-    --routes nats://$USER:$PASS@$SVC:6222
+    --routes nats://$SVC:6222
